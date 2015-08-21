@@ -63,5 +63,33 @@ describe('#identify', function () {
 				done();
 			});
 		});
+
+		it('should hit the Lifecycle api server without an optional parameter', function (done) {
+			nock.cleanAll();
+			nock('https://api.lifecycle.io/v1')
+				.post('/identify')
+				.reply(200);
+
+			lifecycle.identify('id', {}, function (err, res) {
+				should.not.exist(err);
+				should.exist(res);
+				res.statusCode.should.equal(200);
+				done();
+			});
+		});
+
+		it('should hit the Lifecycle api server without an all optional parameters', function (done) {
+			nock.cleanAll();
+			nock('https://api.lifecycle.io/v1')
+				.post('/identify')
+				.reply(200);
+
+			lifecycle.identify('id', function (err, res) {
+				should.not.exist(err);
+				should.exist(res);
+				res.statusCode.should.equal(200);
+				done();
+			});
+		});
 	});
 });
