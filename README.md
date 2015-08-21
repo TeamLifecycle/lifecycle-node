@@ -2,7 +2,7 @@
 
 ## Installation
 ``` bash
-npm install lifecycle
+npm install lifecycle-node
 ```
 
 ## Documentation
@@ -14,7 +14,7 @@ Identify and Track users via your `lifecycle` instance.
 ### Identify
 Identify users to create, add, and update attributes to user data stored with Lifecycle.
 ``` js
-var lifecycle = require('lifecycle');
+var lifecycle = require('lifecycle-node');
 lifecycle.identify(uniqueId, [defaultAttributes], [extraAttributes], callback);
 ```
 
@@ -52,7 +52,7 @@ lifecycle.identify(uniqueId, [defaultAttributes], [extraAttributes], callback);
 ### Track
 Track your events and the users who trigger them.
 ``` js
-var lifecycle = require('lifecycle');
+var lifecycle = require('lifecycle-node');
 lifecycle.track(eventId, uniqueId, [properties], callback);
 ```
 

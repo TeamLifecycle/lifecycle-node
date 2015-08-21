@@ -1,6 +1,6 @@
 {
   "name": "lifecycle-node",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Lifecycle bindings for Node.js",
   "main": "lib/lifecycle.js",
   "scripts": {
