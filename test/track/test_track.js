@@ -43,5 +43,19 @@ describe('#track', function () {
 				done();
 			});
 		});
+
+		it('should hit the Lifecycle api server without optional event properties', function (done) {
+			nock.cleanAll();
+			nock('https://api.lifecycle.io/v1')
+				.post('/track')
+				.reply(200);
+
+			lifecycle.track('event', 'id', function (err, res) {
+				should.not.exist(err);
+				should.exist(res);
+				res.statusCode.should.equal(200);
+				done();
+			});
+		});
 	});
 });
